@@ -1,0 +1,26 @@
+[package]
+name = "pncp-minerador"
+version = "0.1.5"
+description = "🛡️ Centro de Comando - Forja CodeBros"
+edition = "2021"
+
+[[bin]]
+name = "pncp-minerador"
+path = "src/main.rs"
+
+[dependencies]
+tauri = { version = "2.0", features = [] }
+tauri-plugin-shell = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1.0", features = ["full"] }
+regex = "1.10"
+pdf-extract = "0.7"
+bytes = "1.10"
+zip = "2.1"
+scraper = "0.20"
+
+# 🎯 ADICIONE ESSAS DUAS LINHAS AQUI NO FINAL DO ARQUIVO:
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
