@@ -29,10 +29,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tagName: v1.0.0
-        releaseName: 'Robô PNCP - Versão Windows'
-        releaseBody: 'Instalador oficial gerado na nuvem.'
-        releaseDraft: true
-        prerelease: false
         projectPath: ./src-tauri
         frontendDist: ../frontend/dist
+        args: "--bundles msi"
+
+    - name: Enviar Instalador como Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: instalador-windows
+        path: src-tauri/target/release/bundle/msi/*.msi
