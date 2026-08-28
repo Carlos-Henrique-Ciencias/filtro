@@ -35,5 +35,5 @@ jobs:
     - name: Salvar Instalador
       uses: actions/upload-artifact@v4
       with:
-        name: meu-instalador-windows
-        path: src-tauri/target/release/bundle/**/*
+       name: meu-instalador-windows
+       path: src-tauri/target/release/bundle/nsis/*.exe
