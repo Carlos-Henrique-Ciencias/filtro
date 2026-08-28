@@ -31,10 +31,11 @@ jobs:
       with:
         projectPath: ./src-tauri
         frontendDist: ../frontend/dist
-        args: "--bundles msi"
 
-    - name: Enviar Instalador como Artifact
+    - name: Salvar Instalador
       uses: actions/upload-artifact@v4
       with:
-        name: instalador-windows
-        path: src-tauri/target/release/bundle/msi/*.msi
+        name: meu-instalador-windows
+        path: |
+          src-tauri/target/release/bundle/**/*.msi
+          src-tauri/target/release/bundle/**/*.exe
